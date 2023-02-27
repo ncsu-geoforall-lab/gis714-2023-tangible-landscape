@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "layers": [
+        [
+          "d.vect",
+          "map=points",
+          "icon=basic/pin",
+          "size=60",
+          "color=#00284E",
+          "fill_color=#00509E"
+        ]
+      ],
+      "base": "elev_lid792_1m",
+      "scanning_params": {
+        "smooth": 10,
+        "zexag": 2,
+        "numscans": 1,
+        "interpolate": true
+      },
+      "calibrate": true,
+      "analyses": "advanced_example.py",
+      "title": "Load and Display Points",
+      "author": "Another Advanced Contributor",
+      "instructions": "Place markers on the landscape and see how they are detected."
+    }
+  ]
+}

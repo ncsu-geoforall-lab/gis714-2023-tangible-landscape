@@ -1,0 +1,35 @@
+name: File content
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  content:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        include:
+          - name: "Check newlines"
+            file: ./tests/newlines.py
+          - name: "Python files"
+            file: ./tests/functions_format.py
+          - name: "JSON files"
+            file: ./tests/json_structure.py
+          - name: "Filenames"
+            file: ./tests/filenames.py
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+      - name: ${{ matrix.name }}
+        run: |
+          python3 ${{ matrix.file }}

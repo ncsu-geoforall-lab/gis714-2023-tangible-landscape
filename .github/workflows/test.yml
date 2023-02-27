@@ -1,0 +1,43 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-functions:
+    name: Run scripts (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install GRASS GIS
+        run: |
+          sudo add-apt-repository --yes ppa:ubuntugis/ubuntugis-unstable
+          sudo apt-get update
+          sudo apt-get install --yes grass grass-dev
+      - name: Test GRASS GIS
+        run: |
+          grass --tmp-location XY --exec g.version -e
+          grass --tmp-location XY --exec python --version
+      - name: Cache sample data
+        uses: actions/cache@v1
+        id: cache
+        with:
+          path: ./nc_spm_08_grass7
+          key: ${{ runner.os }}-data
+      - name: Get sample data
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          grass --tmp-location XY --exec g.download.location url=https://grass.osgeo.org/sampledata/north_carolina/nc_spm_08_grass7.tar.gz --verbose
+      - name: Test execution of Python files
+        run: |
+          python3 ./tests/functions.py

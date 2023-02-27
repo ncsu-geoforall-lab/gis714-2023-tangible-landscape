@@ -1,0 +1,20 @@
+name: Check Line Endings
+
+on:
+  # Trigger the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  crlf-check:
+    name: Ensure there is no CRLF
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout repository contents
+        uses: actions/checkout@v2
+
+      - name: Check endings (fail for CRLF, pass for LF)
+        uses: erclu/check-crlf@v1
