@@ -47,7 +47,7 @@ jobs:
       - name: Get sample data
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          grass --tmp-location XY --exec g.download.location url=https://grass.osgeo.org/sampledata/north_carolina/nc_spm_08_grass7.tar.gz --verbose
+          grass --tmp-location XY --exec g.download.location url=https://grass.osgeo.org/sampledata/north_carolina/nc_spm_08_grass7.tar.gz path=. --verbose
 
       - name: Run
         run: |
