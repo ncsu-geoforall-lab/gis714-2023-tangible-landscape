@@ -12,9 +12,9 @@
         "interpolate": true
       },
       "analyses": "simple_example.py",
-      "title": "Slope and Contours",
-      "author": "Example Contributor",
-      "instructions": "Change topography and observe changes in slope and contours."
+      "title": "Make a Lake",
+      "author": "Rebecca",
+      "instructions": "Make a lakes using elevation."
     }
   ]
 }
