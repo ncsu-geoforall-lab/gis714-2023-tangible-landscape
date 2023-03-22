@@ -12,9 +12,9 @@
         "interpolate": true
       },
       "analyses": "Emma_Butzler.py",
-      "title": "Contours, Fill, Relief, and Direction",
+      "title": "Contours, Fill, Relief, and Direction and Curvature",
       "author": "Emma Butzler",
-      "instructions": "Change topography and observe changes in contours, Relief, Fill and Direction."
+      "instructions": "Change topography and observe changes in contours,curvature, Relief, Fill and Direction."
     }
   ]
 }
