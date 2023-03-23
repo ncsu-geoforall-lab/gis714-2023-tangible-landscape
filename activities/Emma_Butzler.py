@@ -1,19 +1,18 @@
-
 import os
 
 import grass.script as gs
 
 
-
 def run_relief(scanned_elev, env, **kwargs):
-    gs.run_command(
-        "r.relief", input=scanned_elev,output="relief")
+    gs.run_command("r.relief", input=scanned_elev, output="relief")
+
 
 def run_fill(scanned_elev, env, **kwargs):
     gs.run_command(
-        "r.fill.dir", input=scanned_elev,
-        output="fill", direction="direction")
-    
+        "r.fill.dir", input=scanned_elev, output="fill", direction="direction"
+    )
+
+
 def run_contours(scanned_elev, env, **kwargs):
     interval = 5
     gs.run_command(
@@ -25,13 +24,28 @@ def run_contours(scanned_elev, env, **kwargs):
         env=env,
     )
 
+
 def run_curvatures(scanned_elev, env, **kwargs):
-    gs.run_command('r.param.scale', input=scanned_elev, output='profile_curv',
-                   method='profc', size=11, env=env)
-    gs.run_command('r.param.scale', input=scanned_elev, output='tangential_curv',
-                   method='crosc', size=11, env=env)
-    gs.run_command('r.colors', map=['profile_curv', 'tangential_curv'], color='curvature', env=env)
-    
+    gs.run_command(
+        "r.param.scale",
+        input=scanned_elev,
+        output="profile_curv",
+        method="profc",
+        size=11,
+        env=env,
+    )
+    gs.run_command(
+        "r.param.scale",
+        input=scanned_elev,
+        output="tangential_curv",
+        method="crosc",
+        size=11,
+        env=env,
+    )
+    gs.run_command(
+        "r.colors", map=["profile_curv", "tangential_curv"], color="curvature", env=env
+    )
+
 
 def main():
     env = os.environ.copy()
@@ -43,7 +57,7 @@ def main():
 
     run_relief(scanned_elev=elev_resampled, env=env)
     run_fill(scanned_elev=elev_resampled, env=env)
-    run_curvatures(scanned_elev=elev_resampled,env=env)
+    run_curvatures(scanned_elev=elev_resampled, env=env)
 
 
 if __name__ == "__main__":
