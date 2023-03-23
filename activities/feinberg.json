@@ -2,7 +2,7 @@
   "tasks": [
     {
       "layers": [
-        ["d.rast", "map=scan"], ["d.rast", "map=output_lake"], ["d.vect", "map=source", "size=60", "color=yellow"],
+        ["d.rast", "map=scan"], ["d.rast", "map=output_lake"], ["d.vect", "map=source", "size=60", "color=yellow"]]
       "base": "elev_lid792_1m",
       "scanning_params": {
         "smooth": 10,
