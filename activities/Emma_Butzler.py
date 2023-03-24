@@ -4,12 +4,12 @@ import grass.script as gs
 
 
 def run_relief(scanned_elev, env, **kwargs):
-    gs.run_command("r.relief", input=scanned_elev, output="relief")
+    gs.run_command("r.relief", input=scanned_elev, output="relief", env=env)
 
 
 def run_fill(scanned_elev, env, **kwargs):
     gs.run_command(
-        "r.fill.dir", input=scanned_elev, output="fill", direction="direction"
+        "r.fill.dir", input=scanned_elev, output="fill", direction="direction", env=env
     )
 
 
