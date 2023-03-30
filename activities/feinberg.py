@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 
-import os
+from grass.pygrass.vector.geometry import Point
+
+from grass.pygrass.vector import VectorTopo
 
 import grass.script as gs
+
+import os
 
 
 # def run_slope(scanned_elev, env, **kwargs):
@@ -12,9 +16,6 @@ import grass.script as gs
 #     coordinates = [638830, 220150]
 #     gs.run_command('r.lake', elevation=scanned_elev, lake='output_lake',
 #                    coordinates=coordinates, water_level=120, env=env)
-
-from grass.pygrass.vector import VectorTopo
-from grass.pygrass.vector.geometry import Point
 
 
 def create_vector(name, coordinates):
