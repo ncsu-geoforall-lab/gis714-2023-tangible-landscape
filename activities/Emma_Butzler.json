@@ -1,0 +1,21 @@
+{
+  "tasks": [
+    {
+      "layers": [
+        ["d.rast", "map=fill"],
+		["d.vect", "map=contours"]
+      ],
+      "base": "elev_lid792_1m",
+      "scanning_params": {
+        "smooth": 10,
+        "zexag": 2,
+        "numscans": 1,
+        "interpolate": true
+      },
+      "analyses": "Emma_Butzler.py",
+      "title": "Contours and Fill",
+      "author": "Emma Butzler",
+      "instructions": "Change topography and observe  contours and fill."
+    }
+  ]
+}
