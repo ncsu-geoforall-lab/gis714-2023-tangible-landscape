@@ -3,10 +3,6 @@ import os
 import grass.script as gs
 
 
-def run_relief(scanned_elev, env, **kwargs):
-    gs.run_command("r.relief", input=scanned_elev, output="relief", env=env)
-
-
 def run_fill(scanned_elev, env, **kwargs):
     gs.run_command(
         "r.fill.dir", input=scanned_elev, output="fill", direction="direction", env=env
@@ -24,16 +20,6 @@ def run_contours(scanned_elev, env, **kwargs):
         env=env,
     )
 
-
-def run_curvatures(scanned_elev, env, **kwargs):
-    gs.run_command(
-        "r.param.scale",
-        input=scanned_elev,
-        output="profile_curv",
-        method="profc",
-        size=11,
-        env=env,
-    )
     gs.run_command(
         "r.param.scale",
         input=scanned_elev,
