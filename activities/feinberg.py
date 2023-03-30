@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 
-from grass.pygrass.vector.geometry import Point
-
-from grass.pygrass.vector import VectorTopo
-
-import grass.script as gs
-
 import os
 
+import grass.script as gs
+from grass.pygrass.vector import VectorTopo
+from grass.pygrass.vector.geometry import Point
 
 # def run_slope(scanned_elev, env, **kwargs):
 #     gs.run_command("r.slope.aspect", elevation=scanned_elev, slope="slope", env=env)
