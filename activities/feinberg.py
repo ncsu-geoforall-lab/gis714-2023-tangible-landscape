@@ -42,7 +42,7 @@ def main():
     env = os.environ.copy()
     env["GRASS_OVERWRITE"] = "1"
     elevation = "elev_lid792_1m"
-    scan = "elev_resampled"
+    scan = "scan"
     gs.run_command("g.region", raster=elevation, res=4, flags="a", env=env)
     gs.run_command("r.resamp.stats", input=elevation, output=scan, env=env)
 
