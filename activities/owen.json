@@ -2,7 +2,7 @@
   "tasks": [
     {
       "layers": [
-        ["d.rast", "map=drain_directions"],
+        ["d.rast", "map=drain_directions"]
       ],
       "base": "elev_lid792_1m",
       "scanning_params": {
