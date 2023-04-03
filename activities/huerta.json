@@ -1,78 +1,22 @@
 {
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": 8,
-   "id": "e94da370-19f5-4cda-8292-573776403859",
-   "metadata": {
-    "tags": []
-   },
-   "outputs": [
+  "tasks": [
     {
-     "ename": "NameError",
-     "evalue": "name 'true' is not defined",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
-      "Cell \u001b[1;32mIn[8], line 13\u001b[0m\n\u001b[0;32m      1\u001b[0m {\n\u001b[0;32m      2\u001b[0m   \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mtasks\u001b[39m\u001b[38;5;124m\"\u001b[39m: [\n\u001b[0;32m      3\u001b[0m     {\n\u001b[0;32m      4\u001b[0m       \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mlayers\u001b[39m\u001b[38;5;124m\"\u001b[39m: [\n\u001b[0;32m      5\u001b[0m         [\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124md.rast\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mmap=slope\u001b[39m\u001b[38;5;124m\"\u001b[39m]\n\u001b[0;32m      6\u001b[0m       ],\n\u001b[0;32m      7\u001b[0m         \n\u001b[0;32m      8\u001b[0m       \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mbase\u001b[39m\u001b[38;5;124m\"\u001b[39m: \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124melev_lid792_1m\u001b[39m\u001b[38;5;124m\"\u001b[39m,\n\u001b[0;32m      9\u001b[0m       \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mscanning_params\u001b[39m\u001b[38;5;124m\"\u001b[39m: {\n\u001b[0;32m     10\u001b[0m         \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124msmooth\u001b[39m\u001b[38;5;124m\"\u001b[39m: \u001b[38;5;241m10\u001b[39m,\n\u001b[0;32m     11\u001b[0m         \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mzexag\u001b[39m\u001b[38;5;124m\"\u001b[39m: \u001b[38;5;241m2\u001b[39m,\n\u001b[0;32m     12\u001b[0m         \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mnumscans\u001b[39m\u001b[38;5;124m\"\u001b[39m: \u001b[38;5;241m1\u001b[39m,\n\u001b[1;32m---> 13\u001b[0m         \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124minterpolate\u001b[39m\u001b[38;5;124m\"\u001b[39m: \u001b[43mtrue\u001b[49m\n\u001b[0;32m     14\u001b[0m       },\n\u001b[0;32m     15\u001b[0m       \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124manalyses\u001b[39m\u001b[38;5;124m\"\u001b[39m: \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mhuerta.py\u001b[39m\u001b[38;5;124m\"\u001b[39m,\n\u001b[0;32m     16\u001b[0m       \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mtitle\u001b[39m\u001b[38;5;124m\"\u001b[39m: \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mFlow accumulation and watersheds\u001b[39m\u001b[38;5;124m\"\u001b[39m,\n\u001b[0;32m     17\u001b[0m       \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mauthor\u001b[39m\u001b[38;5;124m\"\u001b[39m: \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mJamie Huerta\u001b[39m\u001b[38;5;124m\"\u001b[39m,\n\u001b[0;32m     18\u001b[0m       \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124minstructions\u001b[39m\u001b[38;5;124m\"\u001b[39m: \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mDerive watersheds and observe changes in flow accumulation.\u001b[39m\u001b[38;5;124m\"\u001b[39m\n\u001b[0;32m     19\u001b[0m     }\n\u001b[0;32m     20\u001b[0m   ]\n\u001b[0;32m     21\u001b[0m }\n",
-      "\u001b[1;31mNameError\u001b[0m: name 'true' is not defined"
-     ]
+      "layers": [
+        ["d.rast", "map=flow_accum"]
+        ["d.rast", "map=watersheds"]
+      ],
+        
+      "base": "elev_lid792_1m",
+      "scanning_params": {
+        "smooth": 10,
+        "zexag": 2,
+        "numscans": 1,
+        "interpolate": true
+      },
+      "analyses": "huerta.py",
+      "title": "Flow accumulation and watersheds",
+      "author": "Jamie Huerta",
+      "instructions": "Derive watersheds and observe changes in flow accumulation."
     }
-   ],
-   "source": [
-    "{\n",
-    "  \"tasks\": [\n",
-    "    {\n",
-    "      \"layers\": [\n",
-    "        [\"d.rast\", \"map=flow_accum\"]\n",
-    "        [\"d.rast\", \"map=watersheds\"]\n",
-    "      ],\n",
-    "        \n",
-    "      \"base\": \"elev_lid792_1m\",\n",
-    "      \"scanning_params\": {\n",
-    "        \"smooth\": 10,\n",
-    "        \"zexag\": 2,\n",
-    "        \"numscans\": 1,\n",
-    "        \"interpolate\": true\n",
-    "      },\n",
-    "      \"analyses\": \"huerta.py\",\n",
-    "      \"title\": \"Flow accumulation and watersheds\",\n",
-    "      \"author\": \"Jamie Huerta\",\n",
-    "      \"instructions\": \"Derive watersheds and observe changes in flow accumulation.\"\n",
-    "    }\n",
-    "  ]\n",
-    "}"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "f6ee74ef-2f56-4ec2-be53-fe3496cb0b0a",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.9.5"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
+  ]
 }
