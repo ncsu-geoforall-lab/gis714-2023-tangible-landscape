@@ -42,5 +42,6 @@ def main():
 
     run_hydro(scanned_elev=elev_resampled, env=env)
     
+if__name__=="__main__":
+    main()
     
-if __name__ == "__main__":
