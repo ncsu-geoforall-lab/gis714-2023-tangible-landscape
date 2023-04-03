@@ -1,11 +1,10 @@
 {
   "tasks": [
     {
-       "layers": [
-        ["d.rast", "map=input_dem"], ["d.rast", "map=ponds"],
-        ["d.rast", "watersheds"], ["d.rast", "map=output_lake"], 
+      "layers": [
+        ["d.rast", "map=input_dem"],
+        ["d.vect", "map=contours", "color=60:77:77", "width=2"]
       ],
-        
       "base": "elev_lid792_1m",
       "scanning_params": {
         "smooth": 10,
