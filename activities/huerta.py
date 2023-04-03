@@ -41,7 +41,3 @@ def main():
     gs.run_command("r.resamp.stats", input=elevation, output=elev_resampled, env=env)
 
     run_hydro(scanned_elev=elev_resampled, env=env)
-    
-if__name__== "__main__":
-    main()
-    
