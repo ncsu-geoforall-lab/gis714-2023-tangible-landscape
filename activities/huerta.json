@@ -2,9 +2,9 @@
   "tasks": [
     {
       "layers": [
-        ["d.rast", "map=slope"],
-        ["d.vect", "map=contours", "color=77:77:77", "width=2"]
+        ["d.rast", "map=slope"]
       ],
+        
       "base": "elev_lid792_1m",
       "scanning_params": {
         "smooth": 10,
