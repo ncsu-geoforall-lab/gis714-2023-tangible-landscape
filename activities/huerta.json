@@ -1,8 +1,9 @@
 {
   "tasks": [
     {
-      "layers": [
-        ["d.rast", "map=slope"]
+       "layers": [
+        ["d.rast", "map=input_dem"], ["d.rast", "map=ponds"],
+        ["d.rast", "watersheds"], ["d.rast", "map=output_lake"], 
       ],
         
       "base": "elev_lid792_1m",
