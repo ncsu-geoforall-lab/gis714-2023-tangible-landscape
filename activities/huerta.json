@@ -13,7 +13,7 @@
         "interpolate": true
       },
       "analyses": "huerta.py",
-      "title": "Flow accumulation and watersheds",
+      "title": "Flow accumulation and watershed",
       "author": "Jamie Huerta",
       "instructions": "Derive watersheds and observe changes in flow accumulation."
     }
