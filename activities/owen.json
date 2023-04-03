@@ -1,0 +1,20 @@
+{
+  "tasks": [
+    {
+      "layers": [
+        ["d.rast", "map=drain_directions"],
+      ],
+      "base": "elev_lid792_1m",
+      "scanning_params": {
+        "smooth": 10,
+        "zexag": 2,
+        "numscans": 1,
+        "interpolate": true
+      },
+      "analyses": "owen.py",
+      "title": "Drainage direction",
+      "author": "Owen Smith",
+      "instructions": "Change topography and observe drainage directions change"
+    }
+  ]
+}
