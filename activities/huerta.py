@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[8]:
-
-
 #!/usr/bin/env python3
 
 import os
@@ -12,7 +6,9 @@ import grass.script as gs
 
 def run_hydro(scanned_elev, env, **kwargs):
     gs.run_command('r.watershed', elevation=scanned_elev, accumulation='flow_accum',
-                   basin='watersheds', threshold=1000, flags='a', env=env)
+                   basin='watersheds', threshold=1000, flags='a', env=env
+    )
+
 
 def main():
 
@@ -28,10 +24,3 @@ def main():
     
 if __name__ == "__main__":
     main()
-
-
-# In[ ]:
-
-
-
-
