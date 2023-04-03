@@ -1,22 +1,18 @@
 {
-  "tasks": [
-    {
-      "layers": [
-        ["d.rast", "map=flow_accum"]
-        ["d.rast", "map=watersheds"]
-      ],
-        
-      "base": "elev_lid792_1m",
-      "scanning_params": {
-        "smooth": 10,
-        "zexag": 2,
-        "numscans": 1,
-        "interpolate": true
-      },
-      "analyses": "huerta.py",
-      "title": "Flow accumulation and watersheds",
-      "author": "Jamie Huerta",
-      "instructions": "Derive watersheds and observe changes in flow accumulation."
-    }
-  ]
+	"tasks": [{
+		"layers": [
+			["d.rast", "map=flow_accum"]
+		],
+		"base": "elev_lid792_1m",
+		"scanning_params": {
+			"smooth": 10,
+			"zexag": 2,
+			"numscans": 1,
+			"interpolate": true
+		},
+		"analyses": "huerta.py",
+		"title": "Flow accumulation and watersheds",
+		"author": "Jamie Huerta",
+		"instructions": "Derive watersheds and observe changes in flow accumulation."
+	}]
 }
