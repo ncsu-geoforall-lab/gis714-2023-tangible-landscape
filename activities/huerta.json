@@ -13,6 +13,6 @@
 		"analyses": "huerta.py",
 		"title": "Watersheds",
 		"author": "Jamie Huerta",
-		"instructions": "Derive watersheds and observe changes in flow accumulation."
+		"instructions": "Derive watershed basins."
 	}]
 }
