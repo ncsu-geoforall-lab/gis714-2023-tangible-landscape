@@ -41,7 +41,7 @@ def run_ponds(scanned_elev, env, **kwargs):
         ),
         env=env,
     )
-    gs.run_command(
+    gs.write_command(
         "r.colors", map="ponds", rules="-", stdin="0% aqua\n100% blue", env=env
     )
 
