@@ -20,14 +20,9 @@ import grass.script as gs
 # The following functions starting with the word run follwed by an underscore
 # are the analysis which will run on Tangible Landscape (and during testing).
 
+
 def run_sun(scanned_elev, env, **kwargs):
-    gs.run_command(
-        "r.sun",
-        elevation=scanned_elev,
-        day=95,
-        env=env,
-        glob_rad = 'sun' 
-    )
+    gs.run_command("r.sun", elevation=scanned_elev, day=95, env=env, glob_rad="sun")
 
 
 def main():
