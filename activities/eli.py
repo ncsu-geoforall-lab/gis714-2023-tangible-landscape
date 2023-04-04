@@ -26,7 +26,7 @@ def run_sun(scanned_elev, env, **kwargs):
         elevation=scanned_elev,
         day=95,
         env=env,
-        output='sun'
+        glob_rad = 'sun' 
     )
 
 
@@ -47,7 +47,6 @@ def main():
 
     # Edit here:
     # Place your function call or calls here.
-    # This will run both examples (slope and contours).
     run_sun(scanned_elev=elev_resampled, env=env)
 
 
