@@ -26,6 +26,7 @@ def run_sun(scanned_elev, env, **kwargs):
         elevation=scanned_elev,
         day=95,
         env=env,
+        output='sun'
     )
 
 
