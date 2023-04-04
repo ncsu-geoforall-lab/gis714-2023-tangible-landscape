@@ -2,7 +2,7 @@
   "tasks": [
     {
       "layers": [
-        ["d.rast", "map=slope"]
+        ["d.rast", "map=flowaccumulation"]
       ],
       "base": "elev_lid792_1m",
       "scanning_params": {
@@ -14,7 +14,7 @@
       "analyses": "truffaut_harper.py",
       "title": "Flow Accumulation",
       "author": "Truffaut Harper",
-      "instructions": "Change topography and observe changes in flow Accumulation."
+      "instructions": "Change topography and observe changes in flow accumulation."
     }
   ]
 }
