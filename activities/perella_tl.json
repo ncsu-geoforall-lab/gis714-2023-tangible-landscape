@@ -2,7 +2,7 @@
   "tasks": [
     {
       "layers": [
-        ["d.rast", "map=slope"]
+        ["d.rast", "map=drain"]
       ],
       "base": "elev_lid792_1m",
       "scanning_params": {
@@ -11,7 +11,7 @@
         "numscans": 1,
         "interpolate": true
       },
-      "analyses": "simple_example.py",
+      "analyses": "perella_tl.py",
       "title": "Least Cost Path",
       "author": "Christina Perella",
       "instructions": "Find the least cost path between given start and end coordinates."
