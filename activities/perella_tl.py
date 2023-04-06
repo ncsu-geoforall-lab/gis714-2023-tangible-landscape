@@ -44,7 +44,7 @@ def main():
         scanned_elev=elev_resampled,
         start_coordinate=start,
         end_coordinate=end,
-        env=None,
+        env=env,
     )
 
 
