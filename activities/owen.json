@@ -3,7 +3,7 @@
     {
       "layers": [
         ["d.rast", "map=drain_directions"],
-        ["d.vect", "map=stream"]
+        ["d.vect", "map=streams"]
       ],
       "base": "elev_lid792_1m",
       "scanning_params": {
