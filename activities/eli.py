@@ -17,7 +17,6 @@ from datetime import datetime
 
 import grass.script as gs
 
-
 # Edit here:
 # The following functions starting with the word run follwed by an underscore
 # are the analysis which will run on Tangible Landscape (and during testing).
