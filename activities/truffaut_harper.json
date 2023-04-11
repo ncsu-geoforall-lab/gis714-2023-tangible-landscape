@@ -14,7 +14,7 @@
       "analyses": "truffaut_harper.py",
       "title": "Flow Accumulation",
       "author": "Truffaut Harper",
-      "instructions": "Change topography and observe changes in flow Accumulation."
+      "instructions": "Change topography and observe how streams on the landscape change."
     }
   ]
 }
