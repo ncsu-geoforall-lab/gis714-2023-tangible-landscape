@@ -28,7 +28,12 @@ def get_day():
 
 def run_sun(scanned_elev, current_day, env, **kwargs):
     gs.run_command(
-        "r.sun", elevation=scanned_elev, day=current_day, env=env, glob_rad="sun", incidout='shadows'
+        "r.sun",
+        elevation=scanned_elev,
+        day=current_day,
+        env=env,
+        glob_rad="sun",
+        incidout="shadows",
     )
 
 
