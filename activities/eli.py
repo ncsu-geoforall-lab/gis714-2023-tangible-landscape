@@ -13,10 +13,10 @@ Instructions
 """
 
 import os
+from datetime import datetime
 
 import grass.script as gs
 
-from datetime import datetime
 
 # Edit here:
 # The following functions starting with the word run follwed by an underscore
