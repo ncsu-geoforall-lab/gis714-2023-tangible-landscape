@@ -38,6 +38,11 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           grass --tmp-location XY --exec g.download.location url=https://grass.osgeo.org/sampledata/north_carolina/nc_spm_08_grass7.tar.gz path=. --verbose
+
+      - name: Get addons
+        run: |
+          grass --tmp-location XY --exec g.extension r.accumulate
+
       - name: Test execution of Python files
         run: |
           python3 ./tests/functions.py
