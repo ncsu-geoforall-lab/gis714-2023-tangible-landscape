@@ -3,6 +3,7 @@
     {
       "layers": [
         ["d.rast", "map=drain_directions"]
+        ["d.vect", "map=stream"]
       ],
       "base": "elev_lid792_1m",
       "scanning_params": {
@@ -12,7 +13,7 @@
         "interpolate": true
       },
       "analyses": "owen.py",
-      "title": "Drainage direction",
+      "title": "Stream deliniation w/ r.accumulate",
       "author": "Owen Smith",
       "instructions": "Change topography and observe drainage directions change"
     }
