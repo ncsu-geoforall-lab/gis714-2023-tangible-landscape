@@ -16,13 +16,21 @@ import os
 
 import grass.script as gs
 
+from datetime import datetime
+
 # Edit here:
 # The following functions starting with the word run follwed by an underscore
 # are the analysis which will run on Tangible Landscape (and during testing).
 
 
-def run_sun(scanned_elev, env, **kwargs):
-    gs.run_command("r.sun", elevation=scanned_elev, day=95, env=env, glob_rad="sun")
+def get_day():
+    return datetime.now().timetuple().tm_yday
+
+
+def run_sun(scanned_elev, current_day, env, **kwargs):
+    gs.run_command(
+        "r.sun", elevation=scanned_elev, day=current_day, env=env, glob_rad="sun"
+    )
 
 
 def main():
@@ -42,7 +50,8 @@ def main():
 
     # Edit here:
     # Place your function call or calls here.
-    run_sun(scanned_elev=elev_resampled, env=env)
+    now_day = get_day()
+    run_sun(scanned_elev=elev_resampled, current_day=now_day, env=env)
 
 
 if __name__ == "__main__":
