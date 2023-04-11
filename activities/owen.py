@@ -22,7 +22,7 @@ def run_drain_accum(scanned_elev, env, **kwargs):
             stream="streams",
             overwrite=True,
         )
-    except FileNotFoundError as _:
+    except FileNotFoundError:
         UserWarning("r.accumulate is not installed")
         pass
 
