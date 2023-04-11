@@ -30,10 +30,15 @@ def run_sun(scanned_elev, current_day, env, **kwargs):
     gs.run_command(
         "r.sun",
         elevation=scanned_elev,
+        linke_value=3,
+        albedo_value=0.27,
         day=current_day,
         env=env,
         glob_rad="sun",
-        incidout="shadows",
+        beam_rad="beam",
+        diff_rad="diffuse",
+        refl_rad="refl",
+        insol_time="insolation",
     )
 
 
