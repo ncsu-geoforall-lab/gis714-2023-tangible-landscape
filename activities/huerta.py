@@ -50,7 +50,7 @@ def main():
     gs.run_command("r.resamp.stats", input=elevation, output=elev_resampled, env=env)
 
     run_hydro(scanned_elev=elev_resampled, env=env)
-    run_watershed_slope(scanned_elev=elev_resampled, env=None)
+    run_watershed_slope(scanned_elev=elev_resampled, env=env)
 
 
 if __name__ == "__main__":
