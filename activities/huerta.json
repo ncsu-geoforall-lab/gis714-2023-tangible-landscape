@@ -2,7 +2,14 @@
   "tasks": [
     {
       "layers": [
-        ["d.rast", "map=watersheds_slope"], ["d.vect", "map=watersheds", "color=77:77:77", "width=2", "fill_color=none"
+        ["d.rast", "map=watersheds_slope"],
+        [
+          "d.vect",
+          "map=watersheds",
+          "color=#0000FF",
+          "width=2",
+          "fill_color=none"
+        ]
       ],
       "base": "elev_lid792_1m",
       "scanning_params": {
@@ -11,9 +18,10 @@
         "numscans": 1,
         "interpolate": true
       },
+      "calibrate": true,
       "analyses": "huerta.py",
       "title": "Watershed basins and hydrology",
-      "author": "Jamie Huerta",
+      "author": "Another Advanced Contributor",
       "instructions": "Derive watershed basins and hydrology."
     }
   ]
