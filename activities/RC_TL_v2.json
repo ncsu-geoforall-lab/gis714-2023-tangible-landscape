@@ -7,12 +7,12 @@
                 "smooth": 10,
                 "zexag": 2,
                 "numscans": 1,
-                "interpolate": true,
+                "interpolate": true
             },
             "analyses": "RC_TL_v2.py",
             "title": "Make a Lake and Stream",
             "author": "Rebecca",
-            "instructions": "Make lake and streams using elevation.",
+            "instructions": "Make lake and streams using elevation."
         }
     ]
 }
