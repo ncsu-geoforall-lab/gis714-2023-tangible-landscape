@@ -26,7 +26,11 @@ def get_day():
     return datetime.now().timetuple().tm_yday
 
 
-def run_sun(scanned_elev, current_day, env, **kwargs):
+def get_hour():
+    return datetime.now().hour
+
+
+def run_sun(scanned_elev, current_day, current_hour, env, **kwargs):
     gs.run_command(
         "r.sun",
         elevation=scanned_elev,
@@ -35,10 +39,8 @@ def run_sun(scanned_elev, current_day, env, **kwargs):
         day=current_day,
         env=env,
         glob_rad="sun",
-        beam_rad="beam",
-        diff_rad="diffuse",
-        refl_rad="refl",
-        insol_time="insolation",
+        time=current_hour,
+        incidout="shadows",
     )
 
 
@@ -60,7 +62,10 @@ def main():
     # Edit here:
     # Place your function call or calls here.
     now_day = get_day()
-    run_sun(scanned_elev=elev_resampled, current_day=now_day, env=env)
+    now_hour = get_hour()
+    run_sun(
+        scanned_elev=elev_resampled, current_day=now_day, current_hour=now_hour, env=env
+    )
 
 
 if __name__ == "__main__":
