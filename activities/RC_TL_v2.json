@@ -1,20 +1,18 @@
 {
-  "tasks": [
-    {
-      "layers": [
-        ["d.rast", "map=output_lake"]
-      ],
-      "base": "elev_lid792_1m",
-      "scanning_params": {
-        "smooth": 10,
-        "zexag": 2,
-        "numscans": 1,
-        "interpolate": true
-      },
-      "analyses": "RC_TL_v2.py",
-      "title": "Make a Lake",
-      "author": "Rebecca",
-      "instructions": "Make lakes using elevation."
-    }
-  ]
+    "tasks": [
+        {
+            "layers": [["d.rast", "map=slope"]],
+            "base": "elev_lid792_1m",
+            "scanning_params": {
+                "smooth": 10,
+                "zexag": 2,
+                "numscans": 1,
+                "interpolate": true,
+            },
+            "analyses": "simple_example.py",
+            "title": "Make a Lake",
+            "author": "Rebecca",
+            "instructions": "Make a lakes using elevation.",
+        }
+    ]
 }
