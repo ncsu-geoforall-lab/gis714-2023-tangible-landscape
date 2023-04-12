@@ -1,0 +1,20 @@
+{
+  "tasks": [
+    {
+      "layers": [
+        ["d.rast", "map=watersheds_slope"], ["d.vect", "map=watersheds", "fill_color=none"]
+      ],
+      "base": "elev_lid792_1m",
+      "scanning_params": {
+        "smooth": 10,
+        "zexag": 2,
+        "numscans": 1,
+        "interpolate": true
+      },
+      "analyses": "huerta.py",
+      "title": "Watershed basin and hydrology",
+      "author": "Jamie Huerta",
+      "instructions": "Hydrology and watershed."
+    }
+  ]
+}
