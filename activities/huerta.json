@@ -2,7 +2,7 @@
   "tasks": [
     {
       "layers": [
-        ["d.rast", "map=watersheds_slope"], ["d.vect", "map=watersheds"]
+        ["d.rast", "map=watersheds_slope"]
       ],
       "base": "elev_lid792_1m",
       "scanning_params": {
