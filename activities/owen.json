@@ -1,0 +1,21 @@
+{
+  "tasks": [
+    {
+      "layers": [
+        ["d.rast", "map=drain_directions"],
+        ["d.vect", "map=streams"]
+      ],
+      "base": "elev_lid792_1m",
+      "scanning_params": {
+        "smooth": 10,
+        "zexag": 2,
+        "numscans": 1,
+        "interpolate": true
+      },
+      "analyses": "owen.py",
+      "title": "Stream deliniation w/ r.accumulate",
+      "author": "Owen Smith",
+      "instructions": "Change topography and observe drainage directions change"
+    }
+  ]
+}
