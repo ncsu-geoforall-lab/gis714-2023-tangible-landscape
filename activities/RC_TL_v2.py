@@ -20,7 +20,7 @@ def run_the_lake(scanned_elev, env, **kwargs):
     gs.run_command("r.colors", map="output_lake", color="red", env=env)
 
 
-def run_stream(scanned_elev, env, **kwargs):
+def run_the_stream(scanned_elev, env, **kwargs):
     coordinates = [638830, 220150]
     gs.run_command(
         "r.stream.extract",
@@ -41,6 +41,7 @@ def main():
     gs.run_command("r.resamp.stats", input=elevation, output=elev_resampled, env=env)
 
     run_the_lake(scanned_elev=elev_resampled, env=env)
+    run_the_stream(scanned_elev=elev_resampled, env=env)
 
 
 if __name__ == "__main__":
