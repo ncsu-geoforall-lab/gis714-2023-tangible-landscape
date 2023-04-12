@@ -1,0 +1,20 @@
+{
+  "tasks": [
+    {
+      "layers": [
+        ["d.rast", "map=slope", "map=cost"]
+      ],
+      "base": "elev_lid792_1m",
+      "scanning_params": {
+        "smooth": 10,
+        "zexag": 2,
+        "numscans": 1,
+        "interpolate": true
+      },
+      "analyses": "perkins_tl.py",
+      "title": "Least Cost Trails",
+      "author": "Deja Perkins",
+      "instructions": "Change topography and observe changes in slope and contours. Use the markers to determine the least cost path for the new topography."
+    }
+  ]
+}
