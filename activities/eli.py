@@ -42,6 +42,7 @@ def run_sun(scanned_elev, current_day, current_hour, env, **kwargs):
         time=current_hour,
         incidout="incidout",
     )
+    gs.mapcalc("shadows = if ( isnull(incidout), 1, null())", env=env)
 
 
 def main():
@@ -66,7 +67,6 @@ def main():
     run_sun(
         scanned_elev=elev_resampled, current_day=now_day, current_hour=now_hour, env=env
     )
-    gs.mapcalc("shadows = if ( isnull(incidout), 1, null())", env=env)
 
 
 if __name__ == "__main__":
