@@ -17,17 +17,17 @@ def run_the_lake(scanned_elev, env, **kwargs):
         water_level=120,
         env=env,
     )
-
-
-def run_slope(scanned_elev, env, **kwargs):
-    coordinates = [638830, 220150]
-    gs.run_command("r.slope.aspect", elevation=scanned_elev, slope="slope", env=env)
+    gs.run_command("r.colors", map="output_lake", color="red", env=env)
 
 
 def run_stream(scanned_elev, env, **kwargs):
     coordinates = [638830, 220150]
     gs.run_command(
-        "r.stream.extract", elevation=scanned_elev, stream="output_stream", env=env
+        "r.stream.extract",
+        elevation=scanned_elev,
+        output="output_stream",
+        coordinates=coordinates,
+        env=env,
     )
     gs.run_command("r.colors", map="output_stream", color="blue", env=env)
 

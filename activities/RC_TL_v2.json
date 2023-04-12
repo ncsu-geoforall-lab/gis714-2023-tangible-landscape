@@ -1,11 +1,7 @@
 {
     "tasks": [
         {
-            "layers": [
-                ["d.rast", "map=slope"],
-                ["d.rast", "map=output_lake"],
-                ["d.rast", "map=output_stream"],
-            ],
+            "layers": [["d.rast", "map=output_lake"], ["d.rast", "map=output_stream"]],
             "base": "elev_lid792_1m",
             "scanning_params": {
                 "smooth": 10,
@@ -16,7 +12,7 @@
             "analyses": "RC_TL_v2.py",
             "title": "Make a Lake and Stream",
             "author": "Rebecca",
-            "instructions": "Make lake, streams and slope using elevation.",
+            "instructions": "Make lake and streams using elevation.",
         }
     ]
 }
