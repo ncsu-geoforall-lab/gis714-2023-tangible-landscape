@@ -49,6 +49,10 @@ jobs:
         run: |
           grass --tmp-location XY --exec g.download.location url=https://grass.osgeo.org/sampledata/north_carolina/nc_spm_08_grass7.tar.gz path=. --verbose
 
+      - name: Get addons
+        run: |
+          grass --tmp-location XY --exec g.extension r.accumulate
+
       - name: Run
         run: |
           mkdir pages
