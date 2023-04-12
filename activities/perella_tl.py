@@ -5,7 +5,7 @@ import os
 import grass.script as gs
 
 
-def run_lcp(scanned_elev, env, points=None **kwargs):
+def run_function_with_points(scanned_elev, env, points=None **kwargs):
     if not points:
         points = "points"
         import analyses
@@ -30,14 +30,36 @@ def run_lcp(scanned_elev, env, points=None **kwargs):
             format="point",
             separator="comma",
             env=env,
-            )
-            .strip()
-            .splitlines()
+        )
+        .strip()
+        .splitlines()
     )
     if len(data) < 2:
         return
     for point in data:
         point_list.append([float(p) for p in point.split(",")][:2])
+
+def main():
+    env = os.environ.copy()
+    env["GRASS_OVERWRITE"] = "1"
+    elevation = "elev_lid792_1m"
+    elev_resampled = "elev_resampled"
+    gs.run_command("g.region", raster=elevation, res=4, flags="a", env=env)
+    gs.run_command("r.resamp.stats", input=elevation, output=elev_resampled, env=env)
+    
+    points = "points"
+    gs.write_command(
+        "v.in.ascii",
+        flags="t",
+        input="-",
+        output=points,
+        separator="comma",
+        stdin="638432,220382\n638621,220607",
+        env=env,
+    )
+    run_function_with_points((scanned_elev=elev_resampled, env=env, points=points)
+                             
+def run_lcp(scanned_elev, points, env=env):
     gs.run_command("r.slope.aspect", elevation=scanned_elev, slope="slope", env=env)
     gs.run_command(
         "r.cost",
@@ -60,15 +82,13 @@ def run_lcp(scanned_elev, env, points=None **kwargs):
         env=env,
     )
 
-
 def main():
     env = os.environ.copy()
     env["GRASS_OVERWRITE"] = "1"
     elevation = "elev_lid792_1m"
     elev_resampled = "elev_resampled"
     env = env
-    start = [638469, 220070]
-    end = [638928, 220472]
+    points = points
     gs.run_command("g.region", raster=elevation, res=4, flags="a", env=env)
     gs.run_command("r.resamp.stats", input=elevation, output=elev_resampled, env=env)
 
