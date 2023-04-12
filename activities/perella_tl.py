@@ -5,7 +5,39 @@ import os
 import grass.script as gs
 
 
-def run_lcp(scanned_elev, start_coordinate, end_coordinate, env, **kwargs):
+def run_lcp(scanned_elev, env, points=None **kwargs):
+    if not points:
+        points = "points"
+        import analyses
+        
+        analyses.change_detection(
+            "scan_saved",
+            scanned_elev,
+            points,
+            height_threshold=[10, 100],
+            cells_threshold=[5, 50],
+            add=True,
+            max_detected=5,
+            debug=True,
+            env=env,
+          )
+    point_list = []
+    data = (
+        gs.read_command(
+            "v.out.ascii",
+            input=points,
+            type="point",
+            format="point",
+            separator="comma",
+            env=env,
+            )
+            .strip()
+            .splitlines()
+    )
+    if len(data) < 2:
+        return
+    for point in data:
+        point_list.append([float(p) for p in point.split(",")][:2])
     gs.run_command("r.slope.aspect", elevation=scanned_elev, slope="slope", env=env)
     gs.run_command(
         "r.cost",
@@ -42,9 +74,8 @@ def main():
 
     run_lcp(
         scanned_elev=elev_resampled,
-        start_coordinate=start,
-        end_coordinate=end,
         env=env,
+        points=points
     )
 
 
