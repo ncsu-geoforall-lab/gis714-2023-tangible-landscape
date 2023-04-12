@@ -2,7 +2,8 @@
   "tasks": [
     {
       "layers": [
-        ["d.rast", "map=sun"]
+        ["d.rast", "map=sun"],
+        ["d.rast", "map=shadows"]
       ],
       "base": "elev_lid792_1m",
       "scanning_params": {
@@ -12,9 +13,9 @@
         "interpolate": true
       },
       "analyses": "eli.py",
-      "title": "Sun (solar radiation and radiance)",
+      "title": "Sun (solar radiation and radiance) and Shadows",
       "author": "Eli Horner",
-      "instructions": "Change topography and observe changes in solar radiance and radiation"
+      "instructions": "Change topography and observe changes in solar radiance, radiation, and shadows"
     }
   ]
 }
