@@ -26,8 +26,7 @@ def run_the_stream(scanned_elev, env, **kwargs):
         "r.stream.extract",
         elevation=scanned_elev,
         threshold=3,
-        output="output_stream",
-        coordinates=coordinates,
+        stream_raster="output_stream",
         env=env,
     )
     gs.run_command("r.colors", map="output_stream", color="blue", env=env)
