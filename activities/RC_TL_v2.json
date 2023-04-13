@@ -10,9 +10,9 @@
                 "interpolate": true,
             },
             "analyses": "RC_TL_v2.py",
-            "title": "Make a Lake and Stream",
-            "author": "Rebecca",
-            "instructions": "Make lake and streams using elevation.",
+            "title": "Make a Lake and Stream with color",
+            "author": "Rebecca C",
+            "instructions": "Make lake and streams using elevation and adding color.",
         }
     ]
 }
