@@ -21,12 +21,11 @@ def run_the_lake(scanned_elev, env, **kwargs):
 
 
 def run_the_stream(scanned_elev, env, **kwargs):
-    coordinates = [638830, 220150]
     gs.run_command(
         "r.stream.extract",
         elevation=scanned_elev,
-        threshold=3,
-        stream_raster="output_stream",
+        threshold=100,
+        stream_rast="output_stream",
         env=env,
     )
     gs.run_command("r.colors", map="output_stream", color="blue", env=env)
