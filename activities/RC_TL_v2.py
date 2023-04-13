@@ -17,7 +17,7 @@ def run_the_lake(scanned_elev, env, **kwargs):
         water_level=120,
         env=env,
     )
-    gs.run_command("r.colors", map="output_lake", color="red", env=env)
+    gs.run_command("r.colors", map="output_lake", color="purple", env=env)
 
 
 def run_the_stream(scanned_elev, env, **kwargs):
@@ -25,6 +25,7 @@ def run_the_stream(scanned_elev, env, **kwargs):
     gs.run_command(
         "r.stream.extract",
         elevation=scanned_elev,
+        threshold=3,
         output="output_stream",
         coordinates=coordinates,
         env=env,
