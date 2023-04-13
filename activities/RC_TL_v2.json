@@ -1,18 +1,21 @@
 {
     "tasks": [
         {
-            "layers": [["d.rast", "map=output_lake"], ["d.rast", "map=output_stream"]],
+            "layers": [
+                ["d.rast", "map=output_lake"], 
+                ["d.rast", "map=output_stream"]
+            ],
             "base": "elev_lid792_1m",
             "scanning_params": {
                 "smooth": 10,
                 "zexag": 2,
                 "numscans": 1,
-                "interpolate": true,
+                "interpolate": true
             },
             "analyses": "RC_TL_v2.py",
             "title": "Make a Lake and Stream with color",
             "author": "Rebecca C",
-            "instructions": "Make lake and streams using elevation and adding color.",
+            "instructions": "Make lake and streams using elevation and adding color."
         }
     ]
 }
